@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+
+
+    
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+	int t ;
+	
+	cin >> t ;
+	
+	while(t--)
+	{
+	    long long int n , sum , n_n,b_n_n,temp=1;
+	    cin>>n;
+	    if(n==1||n==2)
+	    {
+	        cout<<"1"<<endl;
+	    }
+	    else if(n==3||n==4||n==5)
+	    {
+	        cout<<"2"<<endl;
+	    }
+	    else
+	    {
+	        for(int i = 0;i<32;i++)
+	        {
+	            sum=temp<<i;
+	            if(sum>n)
+	            {
+	                break;
+	            }
+	            else
+	            {
+	                n_n=i;
+	                b_n_n=i-1;
+	            }
+	        }
+	        long int sum1=pow(2,n_n);
+	        long int sum2=pow(2,b_n_n);
+	        if(n-(sum1-1)>sum1-sum2)
+	        {
+	            cout<<n-(sum1-1)<<endl;
+	        }
+	        else
+	        {
+	            cout<<sum1-sum2<<endl;
+	        }
+	    }
+	}
+	return 0;
+}
