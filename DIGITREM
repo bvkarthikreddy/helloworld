@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int isMin(int n,int d)
+{
+    int nn=n,r,cc=0,c=0;
+    while(nn>0)
+    {
+        r=nn%10;
+        nn/=10;
+        c++;
+        if(r==d)
+        {
+            nn=nn*pow(10,c)+(r+1)*pow(10,c-1);
+            cc=nn-n;
+            c=0;
+        }
+    }
+    return cc;
+}
+int main() 
+{
+	int t;
+	cin >>t;
+	while(t--)
+	{
+	    int n,d;
+	    cin>>n>>d;
+	    cout<<isMin(n,d)<<endl;
+	}
+	return 0;
+}
